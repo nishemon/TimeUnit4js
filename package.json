@@ -1,0 +1,65 @@
+{
+  "name": "timeunit4js",
+  "version": "0.0.1",
+  "description": "TimeUnit for JavaScript",
+  "main": "timeunit.js",
+  "scripts": {
+    "test": "mocha --require intelli-espower-loader",
+    "lint": "jshint timeunit.js",
+    "minify": "sed -e 's/TimeUnit\\.prototype\\./TimeUnitPrototype./' timeunit.js | java -jar node_modules/google-closure-compiler/compiler.jar --js_output_file=dist/timeunit.js"
+  },
+  "keywords": [
+    "TimeUnit"
+  ],
+  "author": "S.Takai",
+  "licenses": [
+    {
+      "type": "Public Domain",
+      "url": "http://creativecommons.org/licenses/publicdomain"
+    }
+  ],
+  "devDependencies": {
+    "espower-loader": "^1.0.0",
+    "google-closure-compiler": "^20151015.0.0",
+    "intelli-espower-loader": "^1.0.0",
+    "jshint": "^2.8.0",
+    "mocha": "^2.3.4",
+    "moment": "^2.10.6",
+    "power-assert": "^1.2.0"
+  },
+  "jshintConfig": {
+    "bitwise": true,
+    "camelcase": false,
+    "curly": true,
+    "eqeqeq": true,
+    "eqnull": true,
+    "es3": true,
+    "es5": false,
+    "forin": false,
+    "freeze": true,
+    "immed": true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "noempty": true,
+    "nonew": true,
+    "quotmark": "single",
+    "strict": true,
+    "undef": true,
+    "unused": true,
+    "trailing": true,
+    "maxcomplexity": 25,
+    "maxdepth": 5,
+    "maxparams": 7,
+    "maxlen": 120,
+
+    "browser": true,
+    "predef": [
+      "require",
+      "global",
+      "window",
+      "module",
+      "Promise"
+    ]
+  }
+}
