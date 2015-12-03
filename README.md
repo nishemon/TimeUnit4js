@@ -2,7 +2,7 @@
 
 TimeUnit4js is "another" porting of Java TimeUnit that is based on [JSR-166](http://gee.cs.oswego.edu/dl/concurrency-interest/index.html).
 
-If you have found Java TimeUnit in JavaScript, you should use [TimeUnit js](https://github.com/jwalton/timeunitjs/).
+If you want Java TimeUnit in JavaScript, you should use [TimeUnit js](https://github.com/jwalton/timeunitjs/).
 It has more compatibility with Java TimeUnit and is stable.
 
 TimeUnit4js is under development.

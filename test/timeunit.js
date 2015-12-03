@@ -37,6 +37,17 @@
 				assert(u.from(u.toMillis(42), TimeUnit.MILLISECONDS) === 42);
 			}
 		});
+
+		it('from(to(v) + 999msec) === v', function() {
+			var i;
+			var u;
+			for (i = 0; i < units.length; i++) {
+				u = units[i];
+				if (u !== TimeUnit.MILLISECONDS) {
+					assert(u.from(u.toMillis(42) + 999, TimeUnit.MILLISECONDS) === 42);
+				}
+			}
+		});
 	});
 	describe('TimeUnit Extend Method', function() {
 		it('plus', function() {
@@ -45,11 +56,7 @@
 			var now = new Date();
 			for (i = 0; i < units.length; i++) {
 				u = units[i];
-				if (u === TimeUnit.MICROSECONDS) {
-					assert(u.plus(now, 42).getTime() === moment(now).add(420, 'milliseconds').toDate().getTime());
-				} else {
-					assert(u.plus(now, 42).getTime() === moment(now).add(42, u.toString()).toDate().getTime());
-				}
+				assert(u.plus(now, 42).getTime() === moment(now).add(42, u.toString()).toDate().getTime());
 			}
 		});
 		it('minus', function() {
@@ -58,11 +65,7 @@
 			var now = new Date();
 			for (i = 0; i < units.length; i++) {
 				u = units[i];
-				if (u === TimeUnit.MICROSECONDS) {
-					assert(u.minus(now, 42).getTime() === moment(now).subtract(420, 'milliseconds').toDate().getTime());
-				} else {
-					assert(u.minus(now, 42).getTime() === moment(now).subtract(42, u.toString()).toDate().getTime());
-				}
+				assert(u.minus(now, 42).getTime() === moment(now).subtract(42, u.toString()).toDate().getTime());
 			}
 		});
 	});

@@ -90,7 +90,7 @@
 	 * @return {number}
 	 */
 	TimeUnit.prototype.from = function(value, unit) {
-		return value * unit._f / this._f;
+		return Math.floor(value * unit._f / this._f);
 	};
 
 	/**
@@ -101,6 +101,9 @@
 		return TimeUnit.MILLISECONDS.from(value, this);
 	};
 
+	TimeUnit.prototype.valueOf = function() {
+		return 0;
+	}
 /*
 	TimeUnit.prototype.toMicros = function(value) {
 		return TimeUnit.MICROSECONDS.from(value, this);
